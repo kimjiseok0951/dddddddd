@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>김지석 자기소개 페이지</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<script>
+  function copyText(text, textSpan) {
+    var originalText = textSpan.innerText;
+    var originalColor = textSpan.style.color;
+    var originalWeight = textSpan.style.fontWeight;
+
+    navigator.clipboard.writeText(text).then(() => {
+      textSpan.innerText = "복사완료!";
+      textSpan.style.color = "#22c55e"; // 초록색
+      textSpan.style.fontWeight = "bold";
+
+      setTimeout(function () {
+        textSpan.innerText = originalText;
+        textSpan.style.color = originalColor;
+        textSpan.style.fontWeight = originalWeight;
+      }, 2000);
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+  }
+</script>
+
+<body>
+  <!-- 메인 소개 -->
+  <header class="hero">
+    <img
+      src="jiseok.JPG"
+      alt="프로필 사진" class="profile">
+    <h1 class="typing">안녕하세요!!</h1>
+    <p class="special"><strong>BFD</strong><span> 김지석</span> 입니다!</p>
+  </header>
+
+  <!-- About -->
+  <section class="card">
+    <h2>🙋‍♂️ About Me</h2>
+    <p>
+      서울시 관악구 남강중학교 졸업 👨‍🎓<br>
+      서울시 용산구 선린인터넷고등학교 재학중 🏫<br>
+      생년월일: 2009.05.01 🎂
+    </p>
+  </section>
+
+  <!-- Awards -->
+<section class="card">
+  <h2>🏆 Awards</h2>
+  <ul class="list">
+    <li>
+      🥉 2025 기업연구보고서대회
+      <span class="bronze">동상</span>
+    </li>
+  </ul>
+</section>
+
+
+  <!-- Contact -->
+  <section class="card">
+    <h2>📞 Contact</h2>
+
+    <div class="contact-item">
+      <span onclick="copyText('mhkang2017@naver.com', this)">Email : js09050100@gmail.com</span>
+    </div>
+
+    <div class="contact-item">
+      <span onclick="copyText('010-3109-6593', this)">Tel : 010-3109-6593</span>
+    </div>
+
+    <div class="contact-item">
+      <span onclick="copyText('@jiseok._.51', this)">Insta : @jiseok._.51</span>
+    </div>
+  </section>
+
+
+
+  <footer>
+    © 2026 BFD All rights reserved
+  </footer>
+
+
+</body>
+
+</html>
